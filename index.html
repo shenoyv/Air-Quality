@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	
+  <title>Radar chart</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="RadarChart.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	
+	<style>
+	body {
+		  overflow: hidden;
+		  margin: 0;
+		  background-color : black;
+		  font-color :gold;
+		  color : gold;
+		  font-size: 14px;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		#chart { 
+		  position: absolute;
+		  top: 30px;
+		  left: 100px;
+		  padding-top:50px;
+		  padding-right:50px;
+		  padding-margin:50px;
+		  padding : 25px;
+		  margin : 25px;
+		  z-index: 1;
+		  text-align: center;
+		  margin-left: 200px;
+		  margin-top: 50px;
+		}	
+		  
+		  #d1,#d2,#btn{
+			display: inline;
+			margin-left: 30px;
+			margin-top: 20px;
+		  }
+		  
+		  #btn{
+			border: none;
+			padding: 5px;
+			background-color: silver;
+			
+		  }
+		  
+		  html, body {
+         overflow: hidden;
+         }
+
+         #d1, #d2{
+	     position: relative;
+	     z-index:2;
+        }
+
+
+
+
+    body {
+         margin: 0;
+         position: absolute;
+         width: 100%;
+	    height: 100%;
+        }
+
+	h3 {
+	
+	   color : white;
+	
+	}
+  canvas {
+    width: 100%;
+    height: 100%;
+    }
+
+#body{
+height: 100%;
+}
+#myDIV{
+color : red;
+}
+
+		 
+	</style>
+  </head>
+  <body>
+     
+    <h1 align="center">Air Quality</h1>
+	<h3 align ="center">The visualization is on the air quality data collected of Jan 2011.</h3>
+	
+    <div id="body">
+	  <div id="d1">
+	        <br>
+			Enter Day 1:
+			<Select name="Day1" id="Day1">
+			<option value="Day 1">Day 1</option>
+			<option value="Day 2">Day 2</option>
+			<option value="Day 3">Day 3</option>
+			<option value="Day 4">Day 4</option>
+			<option value="Day 5">Day 5</option>
+			<option value="Day 6">Day 6</option>
+			<option value="Day 7">Day 7</option>
+			<option value="Day 8">Day 8</option>
+			<option value="Day 9">Day 9</option>
+			<option value="Day 10">Day 10</option>
+			<option value="Day 11">Day 11</option>
+			<option value="Day 12">Day 12</option>
+			<option value="Day 13">Day 13</option>
+			<option value ="Day 14">Day 14</option>
+			<option value ="Day 15">Day 15</option>
+			<option value ="Day 16">Day 16</option>
+			<option value ="Day 17">Day 17</option>
+			<option value ="Day 18">Day 18</option>
+			<option value ="Day 19">Day 19</option> 
+			<option value ="Day 20">Day 20</option>
+			<option value = "Day 21">Day 21</option>
+			<option value = "Day 22">Day 22</option>
+			<option value = "Day 22">Day 23</option>
+			<option value = "Day 22">Day 24</option>
+			<option value = "Day 22">Day 25</option>
+			<option value = "Day 22">Day 26</option>
+			<option value = "Day 22">Day 27</option>
+			<option value = "Day 22">Day 28</option>
+			<option value = "Day 22">Day 29</option>
+			<option value = "Day 22">Day 30</option>
+			<option value = "Day 22">Day 31</option>
+			</select>
+		</div>
+		<div id="d2">
+			Enter Day 2:
+			<Select name="Day2" id="Day2">
+			<option value="Day 1">Day 1</option>
+			<option value="Day 2">Day 2</option>
+			<option value="Day 3">Day 3</option>
+			<option value="Day 4">Day 4</option>
+			<option value="Day 5">Day 5</option>
+			<option value="Day 6">Day 6</option>
+			<option value="Day 7">Day 7</option>
+			<option value="Day 8">Day 8</option>
+			<option value="Day 9">Day 9</option>
+			<option value="Day 10">Day 10</option>
+			<option value="Day 11">Day 11</option>
+			<option value="Day 12">Day 12</option>
+			<option value="Day 13">Day 13</option>
+			<option value ="Day 14">Day 14</option>
+			<option value ="Day 15">Day 15</option>
+			<option value ="Day 16">Day 16</option>
+			<option value ="Day 17">Day 17</option>
+			<option value ="Day 18">Day 18</option>
+			<option value ="Day 19">Day 19</option> 
+			<option value ="Day 20">Day 20</option>
+			<option value = "Day 21">Day 21</option>
+			<option value = "Day 22">Day 22</option>
+			<option value = "Day 22">Day 23</option>
+			<option value = "Day 22">Day 24</option>
+			<option value = "Day 22">Day 25</option>
+			<option value = "Day 22">Day 26</option>
+			<option value = "Day 22">Day 27</option>
+			<option value = "Day 22">Day 28</option>
+			<option value = "Day 22">Day 29</option>
+			<option value = "Day 22">Day 30</option>
+			<option value = "Day 22">Day 31</option><br><br>
+			<input id="btn" type="button" value="Submit" onclick="myFunction()">
+			</select>
+		</div>
+	  <div id="chart"></div>
+	  <div id="myDIV" style="display: none; height:75%"><br>
+		  This is the AIR quality visualization of selected days.<canvas></canvas>
+	  </div>
+		
+	  
+    </div>
+	
+	<script>
+	
+	</script>
+	
+	
+    
+
+  </body>
+</html>
